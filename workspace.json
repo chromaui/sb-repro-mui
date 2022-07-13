@@ -1,0 +1,8 @@
+{
+  "$schema": "./node_modules/nx/schemas/workspace-schema.json",
+  "version": 2,
+  "projects": {
+    "sb-repro": "apps/sb-repro",
+    "sb-repro-e2e": "apps/sb-repro-e2e"
+  }
+}
