@@ -11,7 +11,9 @@ import { expect } from '@storybook/jest'
 
 const Template: Story = (props) => (
   <LocalizationProvider dateAdapter={AdapterDayjs}>
-    <DatePicker {...props} />
+    <div style={{ width: '1200px', height: '800px' }}>
+      <DatePicker {...props} />
+    </div>
   </LocalizationProvider>
 )
 
