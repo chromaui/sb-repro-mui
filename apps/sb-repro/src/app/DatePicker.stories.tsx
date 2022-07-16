@@ -11,7 +11,9 @@ import { expect } from '@storybook/jest'
 
 const Template: Story = (props) => (
   <LocalizationProvider dateAdapter={AdapterDayjs}>
-    <DatePicker {...props} />
+    <div style={{ width: '1200px', height: '800px' }}>
+      <DatePicker {...props} />
+    </div>
   </LocalizationProvider>
 )
 
@@ -47,6 +49,13 @@ Open.play = async ({ canvasElement }) => {
   const popup = await screen.findByRole('dialog')
   expect(popup).toBeTruthy()
 }
+
+export const OpenDesktop = Template.bind({})
+OpenDesktop.args = {
+  ...args,
+  useDesktopVersion: true,
+}
+OpenDesktop.play = Open.play
 
 export const Error = Template.bind({})
 Error.args = {

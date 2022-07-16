@@ -4,6 +4,7 @@
   "license": "MIT",
   "scripts": {
     "storybook": "nx run sb-repro:storybook",
+    "build-storybook": "nx run sb-repro:build-storybook -o storybook-static",
     "start": "nx serve",
     "build": "nx build",
     "test": "nx test"
