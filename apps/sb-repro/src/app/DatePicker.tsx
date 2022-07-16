@@ -1,6 +1,6 @@
 import dayjs from 'dayjs';
 import { FormHelperText, InputLabel, TextField } from '@mui/material';
-import { DatePicker as MuiDatePicker } from '@mui/x-date-pickers';
+import { DatePicker as MuiDatePicker, DesktopDatePicker } from '@mui/x-date-pickers';
 
 export const DatePicker = (props: any) => {
   const {
@@ -16,16 +16,19 @@ export const DatePicker = (props: any) => {
     dateTime,
     className,
     errorMessage,
+    useDesktopVersion,
     ...restProps
   } = props;
   const valueToRender = typeof value === 'string' ? value : value?.value;
+
+  const DatePickerComponent = useDesktopVersion ? DesktopDatePicker : MuiDatePicker;
 
   return (
     <div className={className}>
       <InputLabel htmlFor={id} defaultValue={label} required={required}>
         {label}
       </InputLabel>
-      <MuiDatePicker
+      <DatePickerComponent
         OpenPickerButtonProps={{
           'data-testid': 'date-picker-open-button',
         }}

@@ -48,6 +48,13 @@ Open.play = async ({ canvasElement }) => {
   expect(popup).toBeTruthy()
 }
 
+export const OpenDesktop = Template.bind({})
+OpenDesktop.args = {
+  ...args,
+  useDesktopVersion: true,
+}
+OpenDesktop.play = Open.play
+
 export const Error = Template.bind({})
 Error.args = {
   ...args,
